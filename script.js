@@ -7,7 +7,7 @@ const labelDate = document.querySelector(".date");
 
 const containerApp = document.querySelector(".app");
 const logo = document.querySelector(".logo");
-const containerImage = document.querySelector(".image");
+const containerImage = document.getElementById("foxImage");
 const foxText = document.querySelector(".foxText");
 
 const login = document.querySelector(".login");
@@ -28,22 +28,28 @@ btnLogin.addEventListener("click", function (e) {
 
   // check if the credentials are correct
   if (
-    account1?.pin === inputLoginPin.value ||
+    account1?.pin === inputLoginPin.value &&
     account1?.userName === inputLoginUsername.value
   ) {
     labelWelcome.textContent = "Dein täglicher Fuchscontent.";
-    //labelWelcome.style.marginleft = 2rem;
     containerApp.style.opacity = 100;
   }
+  // Find random image
+
+  const imageNumber = Math.floor(Math.random() * 123);
+  console.log(imageNumber);
+  containerImage.src = `https:\/\/randomfox.ca\/images\/${imageNumber}.jpg`;
+  console.log(containerImage);
+
+  // Set date
+  const date = new Date();
+  labelDate.textContent = Intl.DateTimeFormat("en-GB").format(date);
+
   // Clear input fields
   inputLoginUsername.value = inputLoginPin.value = "";
   inputLoginPin.blur(); // removes the focus
 
   // Hide logo & Login fields
-  logo.style.opacity = login.style.opacity = 0;
+  login.style.opacity = 0;
   foxText.style.opacity = 1;
-
-  // Set date
-  const date = new Date();
-  labelDate.textContent = Intl.DateTimeFormat("en-GB").format(date);
 });
