@@ -63,7 +63,10 @@ btnLogin.addEventListener("click", function (e) {
   foxText.style.opacity = 1;
   remix.style.opacity = 1;
 
-  // Remix
+  
+});
+
+// Remix
 
   document.querySelector(".btn--remix").addEventListener("click", function () {
     // Find random image
@@ -71,7 +74,9 @@ btnLogin.addEventListener("click", function (e) {
     // Find randox fox fact
     findFact();
   });
-});
+
+
+
 
 const foxFacts = [
   "Füchse sind hervorragende Nachtjäger. Ihre Augen sind speziell angepasst, um im Dunkeln sehen zu können. Hinter den lichtempfindlichen Zellen liegt eine weitere Schicht, das Tapetum lucidum, die das Licht durch das Auge zurückreflektiert. Dadurch verdoppelt sich die Intensität des Lichts das der Fuchs sehen kann, was ihn zu einem ausgezeichneten Beutegreifer macht",
