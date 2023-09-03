@@ -21,6 +21,7 @@ body {
 nav {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 0 2rem;
   height: 10vh;
   /* after log in*/
@@ -29,10 +30,13 @@ nav {
 }
 
 .welcome {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
   font-size: 3rem;
   font-weight: 500;
   margin-top: 10rem;
-
   text-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
 }
 
@@ -94,7 +98,6 @@ nav {
   display: grid;
   grid-template-rows: auto repeat(3, 10rem) auto;
   gap: 2rem;
-
   /* NOTE This creates the fade in/out animation */
   opacity: 0;
   transition: all 1s;
@@ -103,7 +106,6 @@ nav {
 /* Header */
 
 .header {
-  grid-column: 1 / span 2;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -121,19 +123,31 @@ nav {
   color: #888;
 }
 
-/* IMAGE */
+/* FACTS */
+
+.foxTextTitle {
+  position: relative;
+  top: -1rem;
+  font-size: 2rem;
+  font-weight: 400;
+  opacity: 1;
+  color: #595959;
+}
 
 .foxText {
-  grid-row: 1 / span 2;
+  position: relative;
+  grid-row: 2 / span 2;
   font-size: 1.5rem;
   opacity: 1;
-  grid-column: 1 / span 2;
   text-align: justify;
-  color: #6f6f6f;
+  color: #5c5c5c;
 }
+
+/* IMAGE */
 
 .image {
   grid-row: 2 / span 6;
+
   width: fit-content;
   height: fit-content;
   border-radius: 2rem;
@@ -142,9 +156,28 @@ nav {
 }
 
 .footer {
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
   bottom: 1rem;
   color: #444;
-  font-size: 1rem;
-  align-items: center;
+  font-size: 1.5rem;
+  align-items: left;
+}
+
+/* REMIX BUTTON */
+
+.btn--remix {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  background-image: linear-gradient(to top left, #ff6403, #faad32);
+  font-size: 1.6rem;
+  font-family: inherit;
+  font-weight: 500;
+  border: none;
+  padding: 1.25rem 3.3rem;
+  border-radius: 10rem;
+  cursor: pointer;
 }
