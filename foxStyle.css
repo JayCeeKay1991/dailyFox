@@ -181,3 +181,7 @@ nav {
   border-radius: 10rem;
   cursor: pointer;
 }
+
+.btn--remix:hover {
+  padding: 1.5rem 3.8rem;
+}
