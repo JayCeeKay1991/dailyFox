@@ -18,21 +18,27 @@ const inputLoginPin = document.querySelector(".login__input--pin");
 
 // Data
 const account1 = {
-  userName: "1",
-  pin: "1",
+  userName: "waschbaer_unendlich",
+  pin: "schneefuchs",
 };
 
 // Function
 
 const findImage = function () {
-  const imageNumber = Math.floor(Math.random() * 123);
+  const imageNumber = Math.floor(Math.random() * 122) + 1;
   containerImage.src = `https:\/\/randomfox.ca\/images\/${imageNumber}.jpg`;
+  console.log(imageNumber);
 };
 
 const findFact = function () {
   const factNumber = Math.floor(Math.random() * foxFacts.length);
   foxTextTitle.textContent = `Fox fact #${factNumber + 1}`;
   foxText.textContent = `${foxFacts[factNumber]}`;
+};
+
+const updateDate = function () {
+  const date = new Date();
+  labelDate.textContent = Intl.DateTimeFormat("en-GB").format(date);
 };
 
 // Login
@@ -55,25 +61,24 @@ btnLogin.addEventListener("click", function (e) {
   findFact();
 
   // Set date
-  const date = new Date();
-  labelDate.textContent = Intl.DateTimeFormat("en-GB").format(date);
+  updateDate();
 
   // Hide login, show text, show button
   login.style.opacity = 0;
   foxText.style.opacity = 1;
   remix.style.opacity = 1;
-
-  
 });
 
 // Remix
 
-  document.querySelector(".btn--remix").addEventListener("click", function () {
-    // Find random image
-    findImage();
-    // Find randox fox fact
-    findFact();
-  });
+document.querySelector(".btn--remix").addEventListener("click", function () {
+  // Find random image
+  findImage();
+  // Find randox fox fact
+  findFact();
+  // Update date
+  updateDate();
+});
 
 
 
