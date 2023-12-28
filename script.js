@@ -15,19 +15,19 @@ const login = document.querySelector(".login");
 const btnLogin = document.querySelector(".login__btn");
 const inputLoginUsername = document.querySelector(".login__input--user");
 const inputLoginPin = document.querySelector(".login__input--pin");
+const footer = document.querySelector(".footer");
 
 // Data
-const account1 = {
-  userName: "waschbaer_unendlich",
-  pin: "schneefuchs",
+const accountDetails = {
+  userName: "1",
+  pin: "1",
 };
 
-// Function
+// Functions
 
 const findImage = function () {
   const imageNumber = Math.floor(Math.random() * 122) + 1;
   containerImage.src = `https:\/\/randomfox.ca\/images\/${imageNumber}.jpg`;
-  console.log(imageNumber);
 };
 
 const findFact = function () {
@@ -41,43 +41,38 @@ const updateDate = function () {
   labelDate.textContent = Intl.DateTimeFormat("en-GB").format(date);
 };
 
+const init = function() {
+  findImage();
+  findFact();
+  updateDate();
+}
+
 // Login
 
 btnLogin.addEventListener("click", function (e) {
-  e.preventDefault(); // stops the button in a form from submitting
-
+  e.preventDefault();
   // check if the credentials are correct
   if (
-    account1?.pin === inputLoginPin.value &&
-    account1?.userName === inputLoginUsername.value
+    accountDetails?.pin === inputLoginPin.value &&
+    accountDetails?.userName === inputLoginUsername.value
   ) {
     labelWelcome.textContent = "Dein täglicher Fuchscontent.";
     containerApp.style.opacity = 100;
   }
-  // Find random image
-  findImage();
 
-  // Find randox fox fact
-  findFact();
-
-  // Set date
-  updateDate();
+  init();
 
   // Hide login, show text, show button
-  login.style.opacity = 0;
-  foxText.style.opacity = 1;
-  remix.style.opacity = 1;
+  login.classList.add('hidden');
+  containerApp.classList.remove('hidden')
+  footer.classList.remove('hidden')
+
 });
 
 // Remix
 
 document.querySelector(".btn--remix").addEventListener("click", function () {
-  // Find random image
-  findImage();
-  // Find randox fox fact
-  findFact();
-  // Update date
-  updateDate();
+  init();
 });
 
 const foxFacts = [

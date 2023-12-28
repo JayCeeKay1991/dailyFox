@@ -14,7 +14,7 @@ body {
     "Lucida Sans", Arial, sans-serif;
   color: #444;
   background-color: #f3f3f3;
-  height: 70vh;
+  height: 100vh;
   padding: 1rem;
 }
 
@@ -24,8 +24,6 @@ nav {
   justify-content: center;
   padding: 0 2rem;
   height: 10vh;
-  /* after log in*/
-  opacity: 1;
   transition: all 1s;
 }
 
@@ -39,14 +37,6 @@ nav {
   margin-top: 10rem;
   text-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
 }
-
-.logo {
-  position: absolute;
-  height: 11rem;
-  margin-left: 26rem;
-  opacity: 0.7;
-}
-
 
 .login {
   display: flex;
@@ -98,10 +88,9 @@ nav {
   max-width: 100rem;
   margin: 6rem auto;
   display: grid;
-  grid-template-rows: auto repeat(3, 10rem) auto;
+  grid-template-rows: repeat(7, 10rem);
   gap: 2rem;
-  /* NOTE This creates the fade in/out animation */
-  opacity: 0;
+  font-size: 1.5rem;
   transition: all 1s;
 }
 
@@ -121,52 +110,39 @@ nav {
 }
 
 .header__date {
-  font-size: 1.5rem;
   color: #888;
 }
 
 /* FACTS */
 
 .foxTextTitle {
-  position: relative;
-  top: -1rem;
+  grid-row-start: 1;
+  grid-row-end: 2;
   font-size: 2rem;
   font-weight: 400;
-  opacity: 1;
-  color: #595959;
+  line-height: 200%;
 }
 
 .foxText {
-  position: relative;
-  grid-row: 2 / span 2;
-  font-size: 1.5rem;
-  opacity: 1;
-  text-align: justify;
-  color: #5c5c5c;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  line-height: 150%;
+
 }
 
 /* IMAGE */
 
 .image {
-  grid-row: 2 / span 6;
+  grid-row: 2 / span 5;
   max-width: 100%;
   max-height: 100%;
   width: fit-content;
   height: fit-content;
-  border-radius: 2rem;
+  border-radius: 1.5rem;
   overflow: hidden;
-  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  /* box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25); */
 }
 
-.footer {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  bottom: 1rem;
-  color: #444;
-  font-size: 1.5rem;
-  align-items: left;
-}
 
 /* REMIX BUTTON */
 
@@ -174,11 +150,8 @@ nav {
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
-  opacity: 1;
   background-image: linear-gradient(to top left, #ff6403, #faad32);
-  font-size: 1.6rem;
   font-family: inherit;
-  font-weight: 500;
   border: none;
   padding: 1.25rem 3.3rem;
   border-radius: 10rem;
@@ -186,5 +159,16 @@ nav {
 }
 
 .btn--remix:hover {
-  padding: 1.5rem 3.8rem;
+  padding: 1.4rem 3.7rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  line-height: 10rem;
 }
