@@ -57,15 +57,10 @@ btnLogin.addEventListener("click", function (e) {
     accountDetails?.userName === inputLoginUsername.value
   ) {
     labelWelcome.textContent = "Dein täglicher Fuchscontent.";
-    containerApp.style.opacity = 100;
+    login.classList.add('hidden');
+    containerApp.classList.remove('hidden')
+    init();
   }
-
-  init();
-
-  // Hide login, show text, show button
-  login.classList.add('hidden');
-  containerApp.classList.remove('hidden')
-
 });
 
 // Remix
