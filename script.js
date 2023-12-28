@@ -65,7 +65,6 @@ btnLogin.addEventListener("click", function (e) {
   // Hide login, show text, show button
   login.classList.add('hidden');
   containerApp.classList.remove('hidden')
-  footer.classList.remove('hidden')
 
 });
 
